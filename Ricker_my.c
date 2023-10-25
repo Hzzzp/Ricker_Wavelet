@@ -17,16 +17,16 @@ double Ricker(double f,double t){
 
 int main()
 {
-    double f = 10.0;         //中心频率
-    int numPoints = 101;     //时间点数量
-    double timeStep = 0.01;  //时间步长
-    double t = 0.0;         //初始时间
+    double fm = 10.0;        //中心频率
+    int numPoints = 31;       //时间点数量
+    double timeStep = 0.01;      //时间步长
+    double t = -numPoints / 2 * timeStep;      //初始时间(对称)
     int i;
 
     for (i = 0;i < numPoints; i++){
 
-    double result = Ricker(f, t);
-    printf("Ricker Wavelet at t=%f: %f\n", t, result);
+    double r = Ricker(fm, t);
+    printf("%f %f\n", t, r);
     t += timeStep;  //更新时间节点
     }
 
